@@ -101,7 +101,7 @@ var xScale = d3.scale.log()
     }), d3.max(data, function (d) {
         return 1.07 * d["Friends"];
     })])
-    .range([0, width]);
+    .range([-20000, width]);
 
 // set y axis scale
 var yScale = d3.scale.log()
@@ -110,7 +110,7 @@ var yScale = d3.scale.log()
     }), d3.max(data, function (d) {
         return 1.02 * d["Followers"];
     })])
-    .range([height, 0]);
+    .range([height, -20000]);
 
 // select SVG
 var svg = d3.select("#chart")
