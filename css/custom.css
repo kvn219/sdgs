@@ -1,6 +1,6 @@
 #chart {
     margin-top: 0.0%;
-    margin-bottom: 10.0%;
+    margin-bottom: 0.0%;
     margin-left: 10.0%;
     margin-right: 0.0%;
     width: 100%;
@@ -37,11 +37,6 @@ h2 {
     margin-left: 5.0%;
     margin-right: 5.0%;
     width: 100%;
-}
-
-p {
-    margin-left: 5.0%;
-    margin-right: 5.0%;
 }
 
 select {
