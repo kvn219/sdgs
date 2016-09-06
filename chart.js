@@ -36,10 +36,6 @@ d3.csv(data_url, function (data) {
         "variable": "Impact"
     }, {
         "variable": "Statuses"
-    }, {
-        "variable": "Principal component - 1"
-    }, {
-        "variable": "Principal component - 2"
     }];
     // add dropdown menu for y variables
     var yVars = [{
@@ -52,10 +48,6 @@ d3.csv(data_url, function (data) {
         "variable": "Impact"
     }, {
         "variable": "Statuses"
-    }, {
-        "variable": "Principal component - 1"
-    }, {
-        "variable": "Principal component - 2"
     }];
 menu.append('span')
     .text('X-axis: ');
