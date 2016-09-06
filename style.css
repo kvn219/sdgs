@@ -1,0 +1,127 @@
+#chart {
+    margin-top: 0.0%;
+    margin-bottom: 10.0%;
+    margin-left: 10.0%;
+    margin-right: 0.0%;
+    width: 100%;
+}
+
+#menu {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-left: 10.0%;
+    margin-right: 0.0%;
+    padding: 0;
+    fill: white;
+    font-weight: 500;
+    background-color: white;
+    width: 100%;
+}
+
+#content {
+    margin: 0.0% 10.0% 0.0% 5.0%;
+    padding: 1em;
+    width: 100%;
+    text-align: left;
+    border: 1px solid black;
+}
+
+svg {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h2 {
+    margin-top: 5.0%;
+    margin-left: 5.0%;
+    margin-right: 5.0%;
+    width: 100%;
+}
+
+p {
+    margin-left: 5.0%;
+    margin-right: 5.0%;
+}
+
+select {
+    margin-left: 5.0%;
+    width: 20%;
+    font-size: 0.8em;
+    color: #303030;
+    background-color: #ffffff;
+    font-weight: 300;
+}
+
+.axis path,
+.axis line {
+    fill: None;
+    shape-rendering: crispEdges;
+}
+
+.axis line {
+    stroke: #eee;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.tick text {
+    fill: #303030;
+    font-size: 0.6em;
+    padding: 30px;
+}
+
+#xAxisLabel,
+#yAxisLabel {
+    fill: #303030;
+    background: white;
+    font-size: 1.0em;
+    margin: 10px;
+    padding: 10px;
+}
+
+#name {
+    font-size: 10px;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 7px;
+    width: 240px;
+    font-size: 0.7em;
+    pointer-events: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tooltip p {
+    margin: 0;
+    padding: 0;
+}
+
+.circle {
+    stroke: #303030;
+    stroke-width: 0.1px;
+    fill: #fff;
+    opacity: 0.7;
+
+}
+
+.circle:hover {
+    stroke: #303030;
+    stroke-width: 2px;
+    fill: #FFF200;
+}
+
+.legend rect {
+    fill: white;
+    stroke: None;
+    opacity: 1.0;
+    font-size: large;
+    border-color: #ffffff;
+}
+
+.legend text {
+    font-size: 11px;
+}
