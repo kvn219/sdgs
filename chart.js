@@ -20,8 +20,10 @@ var color = d3.scale.ordinal()
     .domain(["Hot", "Not"])
     .range(["red", "#A5F2F3"]);
 
+var data_url = 'https://www.dropbox.com/s/1u232rizgcbhgfh/final.csv?dl=1';
+
 // load data
-d3.csv('https://github.com/kvn219/sdgs/blob/gh-pages/final.csv', function (data) {
+d3.csv(data_url, function (data) {
     console.log(data);
     // add dropdown menu for x variables
     var xVars = [{
