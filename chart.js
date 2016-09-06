@@ -20,7 +20,7 @@ var color = d3.scale.ordinal()
     .domain(["Hot", "Not"])
     .range(["red", "#A5F2F3"]);
 
-var data_url = 'https://dl.dropbox.com/s/1u232rizgcbhgfh/final.csv?dl=1';
+var data_url = 'https://dl.dropbox.com/s/56m22esu9uv31wk/final.csv?dl=1';
 
 // load data
 d3.csv(data_url, function (data) {
