@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="display-4">Who's <span class="tag tag-danger">Hot</span> or <span class="tag tag-info">Not</span> on
+    <h1 class="display-5">Who's <span class="tag tag-danger">Hot</span> or <span class="tag tag-info">Not</span> on
         <i class="fa fa-twitter fa-2x" aria-hidden="true"></i></h1>
     <p class="lead">Stakeholders with potentially high <a href="https://github.com/kvn219/sdgs">philanthropic
         impact</a> on Twitter for the <a href="https://sustainabledevelopment.un.org/sdgs">Sustainable Development
@@ -80,7 +80,7 @@
                                     </p></a>
                         </div><br>
                 <p><strong>Features</strong><br>Counts of user favourites, followers, friends, statuses were used to train the model.  Additional features were binary indicators: Geo enabled, tags mentioned, and users mentioned.</p>
-                <p><strong>Models</strong><br>Linear models performed the best as Logistic Regression and Support Vector Machines both out performed Random Forest at a similar rate.  Given the unbalanced nature of our sample, we used ROC AUC to evaluate the model.  The mean 10 fold cross validation results score was 80%.</p>
+                <p><strong>Models</strong><br>Linear models performed the best as Logistic Regression and Support Vector Machines both out performed Random Forest at a similar rate.  Given the unbalanced nature of our sample, we used ROC AUC to evaluate the model.  The mean 10 fold cross validation score was 80%.</p>
                 <p><strong>Visualization</strong><br> For the visualization, axes are interpolated with a Log scale (base 10) using d3.js. Twitter Score is determined by predicted probabilities associated with being Twitter verified.  Philanthropic Impact Score was determined by predicted probabilities of meeting the criteria of Twitter verified and SDGs relevant.  Both scores were achieved with Logistic Regression. Axes are interpolated with a Log scale (base 10) using d3.js.</p>
                 <p><strong>Attribution</strong><br>  Thank you font-awesome for providing the Twitter icon, Twitter for having a generous public API, and SDGfunders for providing the domain expertise.  You can access the repo for our work and additional technical methodology via Github <a href="https://github.com/kvn219/sdgs">here.</a></p>
                 </div>
