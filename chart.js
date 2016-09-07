@@ -18,7 +18,6 @@ var body = d3.select("body"),
 
 // set color scale for actors
 var color = d3.scale.ordinal()
-    .domain(["Hot", "Not"])
     .range(["#d9534f", "#5bc0de"]);
 
 // load data
