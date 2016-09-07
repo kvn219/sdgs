@@ -1,34 +1,94 @@
 <!doctype html>
 <html lang="en">
-<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Kevin Nguyen"/>
-    <meta name="theme-color" content="#ffffff">
+    <!--<meta name="theme-color" content="#ffffff">-->
     <title>Philanthropic impact via Twitter</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.svg">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="js/require.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body>
 <div class="container">
-    <h1 class="display-4">Who's <span class="tag tag-danger">Hot</span> & Who's <span class="tag tag-info">Not</span> on <i class="fa fa-twitter fa-2x" aria-hidden="true"></i></h1>
-    <p class="lead">Identifying key stakeholders with potentially high <a href="https://github.com/kvn219/sdgs">philanthropic impact</a> on Twitter for the <a href="https://sustainabledevelopment.un.org/sdgs">SDGs</a>.</p>
-    <div id="menu"></div>
+    <h1 class="display-4">Who's <span class="tag tag-danger">Hot</span> or <span class="tag tag-info">Not</span> on
+        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i></h1>
+    <p class="lead">Stakeholders with potentially high <a href="https://github.com/kvn219/sdgs">philanthropic
+        impact</a> on Twitter for the <a href="https://sustainabledevelopment.un.org/sdgs">Sustainable Development
+        Goals</a>.</p>
+    <blockquote class="blockquote">
+        <p class="m-b-0">Not mobile supported. For best quality, use a desktop with Google Chrome and a maximize browser
+            window.</p>
+    </blockquote>
+    <div class="dropdown" id="menu"></div>
     <div id="chart"></div>
-    <p><strong>Note:</strong> Axes are interpolated with a base 10 Log scale. For more information about our methodology, you can access our repo <a href="https://github.com/kvn219/sdgs">here.</a></p>
+    <br>
+    <!-- Methodology -->
+    <button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bd-example-modal-lg">Notes and
+        Methodology
+    </button>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 class="modal-title">Notes and Methodology</h4></div>
+                <div class="modal-body">
+                    <p><strong>Goal</strong><br>Find a smart way to keep up to date with foundations and philanthropists on Twitter.</p>
+                    <p><strong>Strategy</strong><br>Collect a sample Twitter users from relevant networks, extract features that associated with the SDGs, and approximate philanthropic impact.</p>
+                    <p><strong>Champions (aka relevant networks)</strong><br>
+                        An industry expert selected the list of champions to sample accounts from.  They include:
+                        @Alliancemag, @CEPData, @EAAG_Africa, @FCNewYork, @FordFoundation, @PennSP2, @PhilSDGs,
+                        @SkollFoundation, @SustDev, @ThomasGass, @UN, @fdncenter, @philaction, @LeoDiCaprio, and
+                        @theGIIN.</p>
+                    <p><strong>Data</strong><br>
+                        Our sample consists of 13,220 twitter accounts from the champion's pool of friends. After
+                        removing duplicate accounts, we have 10,220 unique accounts remaining. Modeling was conducted
+                        only unique accounts.</p>
+                    <p><strong>Determining Outcomes</strong><br>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <p class="list-group-item-heading"><Strong>Social status through Twitter Verification</Strong></p>
+                                    <p class="list-group-item-text">
+                                        An account may be verified if it is determined to be an account of public interest. Typically
+                                        this includes accounts maintained by users in music, acting, fashion, government, politics,
+                                        religion, journalism, media, sports, business, and other key interest areas.</p> </a>
+                                        <a href="#" class="list-group-item list-group-item-action">
+                                <p class="list-group-item-heading"><Strong>Philanthropic potential to the SDGs</Strong></p>
+                                    <p class="list-group-item-text">
+                                        Natural language processing was used to detect user mentions, hastags, and
+                                        key words affiliated with the SDGs accounts bios. They included: #Phil2015,
+                                        #sustdev, #FFD, #UNGA, #unga70, #sdg, #csr, #GlobalGoals, #socinv, #sdgs,
+                                        #Agenda2030, #Post2015, #LeaveNoOneBehind, #globaldev, 'Foundation', 'philanthropy',
+                                        'charity', 'fdn', 'funders', 'Fundacion', 'Fundación', 'sdgs', and 'Sustainable Development
+                                        Goals'.
+                                    </p></a>
+                        </div><br>
+                <p><strong>Features</strong><br>Counts of user favourites, followers, friends, statuses were used to train the model.  Additional features were binary indicators: Geo enabled, tags mentioned, and users mentioned.</p>
+                <p><strong>Models</strong><br>Linear models performed the best as Logistic Regression and Support Vector Machines both out performed Random Forest at a similar rate.  Given the unbalanced nature of our sample, we used ROC AUC to evaluate the model.  The mean 10 fold cross validation results score was 80%.</p>
+                <p><strong>Visualization</strong><br> For the visualization, axes are interpolated with a Log scale (base 10) using d3.js. Twitter Score is determined by predicted probabilities associated with being Twitter verified.  Philanthropic Impact Score was determined by predicted probabilities of meeting the criteria of Twitter verified and SDGs relevant.  Both scores were achieved with Logistic Regression. Axes are interpolated with a Log scale (base 10) using d3.js.</p>
+                <p><strong>Attribution</strong><br>  Thank you font-awesome for providing the Twitter icon, Twitter for having a generous public API, and SDGfunders for providing the domain expertise.  You can access the repo for our work and additional technical methodology via Github <a href="https://github.com/kvn219/sdgs">here.</a></p>
+                </div>
+            <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/d3.min.js"></script>
-<script src="js/require.min.js"></script>
 <script src="chart.js"></script>
 </html>

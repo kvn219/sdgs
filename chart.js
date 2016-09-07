@@ -146,7 +146,7 @@ d3.csv("final.csv", function (data) {
         .append('text')
         .attr('id', 'yAxisLabel')
         .attr('transform', 'rotate(-90)')
-        .attr("dy", "-4.0em")
+        .attr("dy", "-3.0em")
         .attr("dx", -height / 2.5)
         .style('text-anchor', 'end')
         .text('Followers');

@@ -73,6 +73,7 @@ select {
     font-size: 1.0em;
     margin: 10px;
     padding: 10px;
+    font-weight: bold;
 }
 
 #name {
@@ -119,4 +120,19 @@ select {
 
 .legend text {
     font-size: 11px;
+}
+
+.btn-block{
+    width: 100%;
+    font-size: 1.3rem;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+.btn-block:hover, .btn-block:active, .btn-block:focus  {
+    background-color: #d9534f;
+    border-color: #d9534f;
+}
+
+.blockquote {
+    font-size: 0.8rem;
 }
