@@ -22,7 +22,7 @@ var color = d3.scale.ordinal()
     .range(["#d9534f", "#5bc0de"]);
 
 // load data
-d3.csv(data_url, function (data) {
+d3.csv("final.csv", function (data) {
     console.log(data);
 
     // add dropdown menu for x variables
